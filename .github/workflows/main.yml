@@ -31,6 +31,12 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
+    - name: Set up Google Chrome
+      uses: browser-actions/setup-chrome@v1
+      with:
+          chrome-version: 'latest'
+          install-chromedriver: true    
+
     - name: Run Selenium tests
       run: |
           pytest -v Test_browserlaunch.py
