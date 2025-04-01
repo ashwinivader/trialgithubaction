@@ -33,5 +33,7 @@ jobs:
 
     - name: Run Selenium tests
       run: |
-       pytest
+          export DISPLAY=:99
+          sudo Xvfb :99 -screen 0 1280x1024x24 &
+          pytest --maxfail=1 --disable-warnings -q
     
