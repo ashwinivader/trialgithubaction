@@ -33,5 +33,5 @@ jobs:
 
     - name: Run Selenium tests
       run: |
-        python ./browserlaunch.py
+       pytest
     

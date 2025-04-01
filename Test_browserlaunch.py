@@ -7,6 +7,7 @@ from selenium.webdriver.chrome.options import Options as ChromeOptions
 #from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.service import Service
 import time
+import pytest
 
 # Set up the Chrome WebDriver using WebDriver Manager
 #driver = webdriver.Chrome()
@@ -14,19 +15,10 @@ import time
 # Create a temporary directory for the user data
 
 
-
-options = ChromeOptions()
-#driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),options=options)
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-
-# Open Google
-driver.get("https://dev-www.astm.org/")
-
-# Optional: Wait for a few seconds to see the browser (not required, just for demo purposes)
-
-time.sleep(2)
-
-
-
-# Close the browser
-driver.quit()
+def testlaunch():
+        options = ChromeOptions()
+        #driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),options=options)
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+        driver.get("https://dev-www.astm.org/")
+        time.sleep(2)
+        driver.quit()
