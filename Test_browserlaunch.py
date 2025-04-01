@@ -16,10 +16,11 @@ import pytest
 
 def testlaunch():
         options = ChromeOptions()
-        
+        driver=webdriver.Chrome()
+        #options = ChromeOptions()
         # Set a unique user data directory for each session to avoid conflicts
-        options.add_argument("user-data-dir=/tmp/chrome-user-data")
-        driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),options=options)
+        #options.add_argument("user-data-dir=/tmp/chrome-user-data")
+        #driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),options=options)
         #driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
         driver.get("https://dev-www.astm.org/")
         time.sleep(2)
