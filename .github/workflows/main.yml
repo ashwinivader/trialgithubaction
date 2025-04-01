@@ -33,4 +33,5 @@ jobs:
 
     - name: Run Selenium tests
       run: |
-        python .\browserlaunch.py
+        python ./browserlaunch.py
+      working-directory: ./trialgithubaction
