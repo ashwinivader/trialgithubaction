@@ -7,6 +7,7 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.service import Service
 import time
 import pytest
+from selenium.webdriver.chrome.options import Options
 
 # Set up the Chrome WebDriver using WebDriver Manager
 #driver = webdriver.Chrome()
@@ -16,13 +17,21 @@ import pytest
 
 def testlaunch():
         print("Trial")
-        options = ChromeOptions()
+        #options = ChromeOptions()
         #driver=webdriver.Chrome()
-        options = ChromeOptions()
+        #options = ChromeOptions()
         # Set a unique user data directory for each session to avoid conflicts
         #options.add_argument("user-data-dir=/tmp/chrome-user-data")
-        driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),options=options)
+        #driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),options=options)
         #driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+
+
+
+        options = Options()
+        options.add_argument('--headless')
+        options.add_argument('--no-sandbox')
+        options.add_argument('--disable-dev-shm-usage')
+        driver = webdriver.Chrome(options=options)
         driver.get("https://dev-www.astm.org/")
         time.sleep(2)
         driver.quit()
