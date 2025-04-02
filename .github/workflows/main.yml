@@ -33,5 +33,7 @@ jobs:
 
 
     - name: Run Selenium tests
+      env:
+          PYTHONUNBUFFERED: '1'
       run: |
-          pytest -v -u Test_browserlaunch.py
+          pytest -v -s Test_browserlaunch.py
