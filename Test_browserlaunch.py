@@ -33,5 +33,7 @@ def testlaunch():
         options.add_argument('--disable-dev-shm-usage')
         driver = webdriver.Chrome(options=options)
         driver.get("https://dev-www.astm.org/")
-        time.sleep(2)
+        time.sleep(1)
+        print('Page Title:', driver.title)
+        assert 'Home | ASTM' in driver.title
         driver.quit()
